@@ -59,6 +59,7 @@ hooks = {
         from = 'player',
         to = 'player',
         callback = function(payload)
+            if payload.fromInventory == payload.toInventory then return end
             local playerName = GetPlayerName(payload.source)
             local playerIdentifier = GetPlayerIdentifiers(payload.source)[1]
             local playerCoords = GetEntityCoords(GetPlayerPed(payload.source))
