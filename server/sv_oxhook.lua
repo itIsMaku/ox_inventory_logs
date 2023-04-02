@@ -19,11 +19,11 @@ AddEventHandler('onResourceStart', function(resource)
         function(payload)
             for name, data in pairs(types) do
                 if payload.fromType == data.from and payload.toType == data.to then
-                    print('^3[logs] ^0' .. name .. ' type hook triggered.')
+                    --print('^3[logs] ^0' .. name .. ' type hook triggered.')
                     data.callback(payload)
                 end
             end
-            print(json.encode(payload, { indent = true }))
+            --print(json.encode(payload, { indent = true }))
         end,
         options
     )
